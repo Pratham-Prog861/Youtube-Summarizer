@@ -1,18 +1,18 @@
 import type { Metadata } from 'next';
-import { Geist_Sans } from 'geist/font/sans'; // Corrected import path
-import { Geist_Mono } from 'geist/font/mono'; // Corrected import path
+import { GeistSans } from 'geist/font/sans';
+import { GeistMono } from 'geist/font/mono';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
-const geistSans = Geist_Sans({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
+// const geistSans = GeistSans({ // Removed: GeistSans is used directly
+//   variable: '--font-geist-sans',
+//   subsets: ['latin'],
+// });
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
+// const geistMono = GeistMono({ // Removed: GeistMono is used directly
+//   variable: '--font-geist-mono',
+//   subsets: ['latin'],
+// });
 
 export const metadata: Metadata = {
   title: 'Video Insights Analyzer',
@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${GeistSans.variable} ${GeistMono.variable} antialiased`}>
         {children}
         <Toaster />
       </body>
