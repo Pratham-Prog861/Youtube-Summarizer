@@ -95,24 +95,15 @@ const VideoAnalyzerPage: NextPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center p-4 sm:p-8 bg-background text-foreground font-sans">
-      <header className="w-full max-w-3xl mb-8 text-center">
-        <h1 className="text-4xl font-bold text-primary-foreground bg-primary py-3 px-5 rounded-lg shadow-md inline-block" style={{ color: 'hsl(var(--primary-foreground))', backgroundColor: 'hsl(var(--primary))' }}>
-          Video Insights Analyzer
-        </h1>
-        <p className="text-muted-foreground mt-2">
-          Enter a YouTube video link to get AI-powered summaries, key points, and timestamps.
-        </p>
-      </header>
-
+    <div className="flex flex-col items-center p-4 sm:p-8 bg-background text-foreground font-sans"> {/* Removed min-h-screen */}
       <main className="w-full max-w-3xl space-y-8">
-        <Card className="shadow-xl">
-          <CardHeader>
+        <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <CardHeader className="space-y-1">
             <CardTitle className="flex items-center text-2xl">
-              <Link2 className="mr-2 h-6 w-6 text-accent" style={{ color: 'hsl(var(--accent))' }} />
+              <Link2 className="mr-2 h-6 w-6 text-primary" />
               Input Video Link
             </CardTitle>
-            <CardDescription>
+            <CardDescription className="text-base">
               Provide a YouTube video URL to start the analysis.
             </CardDescription>
           </CardHeader>
@@ -145,9 +136,9 @@ const VideoAnalyzerPage: NextPage = () => {
         {isLoading && (
           <Card className="shadow-xl">
             <CardContent className="p-6 flex flex-col items-center justify-center space-y-3">
-              <Loader2 className="h-12 w-12 animate-spin text-primary" style={{ color: 'hsl(var(--primary))' }} />
+              <Loader2 className="h-12 w-12 animate-spin text-primary" /> {/* Removed inline style */}
               <p className="text-lg text-muted-foreground">Analyzing video... This may take a moment.</p>
-              <p className="text-sm text-muted-foreground">Please wait while we generate insights for you.</p>
+              <p className="text-muted-foreground">Please wait while we generate insights for you.</p>
             </CardContent>
           </Card>
         )}
@@ -163,13 +154,13 @@ const VideoAnalyzerPage: NextPage = () => {
         {results && !isLoading && (
           <Tabs defaultValue="summary" className="w-full shadow-xl rounded-lg overflow-hidden">
             <TabsList className="grid w-full grid-cols-3 bg-muted/50">
-              <TabsTrigger value="summary" className="data-[state=active]:bg-accent data-[state=active]:text-accent-foreground" style={{ color: 'hsl(var(--accent-foreground))' }}>
+              <TabsTrigger value="summary" className="data-[state=active]:bg-accent data-[state=active]:text-accent-foreground text-muted-foreground"> {/* Removed inline style, added text-muted-foreground for default */}
                 <FileText className="mr-2 h-5 w-5" /> Summary
               </TabsTrigger>
-              <TabsTrigger value="keyPoints" className="data-[state=active]:bg-accent data-[state=active]:text-accent-foreground" style={{ color: 'hsl(var(--accent-foreground))' }}>
+              <TabsTrigger value="keyPoints" className="data-[state=active]:bg-accent data-[state=active]:text-accent-foreground text-muted-foreground"> {/* Removed inline style, added text-muted-foreground for default */}
                 <ListChecks className="mr-2 h-5 w-5" /> Key Points
               </TabsTrigger>
-              <TabsTrigger value="timestamps" className="data-[state=active]:bg-accent data-[state=active]:text-accent-foreground" style={{ color: 'hsl(var(--accent-foreground))' }}>
+              <TabsTrigger value="timestamps" className="data-[state=active]:bg-accent data-[state=active]:text-accent-foreground text-muted-foreground"> {/* Removed inline style, added text-muted-foreground for default */}
                 <Timer className="mr-2 h-5 w-5" /> Timestamps
               </TabsTrigger>
             </TabsList>
@@ -223,9 +214,6 @@ const VideoAnalyzerPage: NextPage = () => {
           </Tabs>
         )}
       </main>
-      <footer className="w-full max-w-3xl mt-12 text-center text-muted-foreground text-sm">
-        <p>&copy; {new Date().getFullYear()} Video Insights Analyzer. Powered by AI.</p>
-      </footer>
     </div>
   );
 };

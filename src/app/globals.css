@@ -2,6 +2,90 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    
+    /* Modern primary color - Soft indigo */
+    --primary: 230 80% 60%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Subtle secondary color */
+    --secondary: 240 5% 90%;
+    --secondary-foreground: 240 10% 3.9%;
+    
+    /* Card and popover with slight blue tint */
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    
+    /* Muted tones */
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 46%;
+    
+    /* Vibrant accent */
+    --accent: 230 80% 60%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Destructive remains standard */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Refined borders and inputs */
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 230 80% 60%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 240 10% 4%;
+    --foreground: 0 0% 98%;
+    
+    /* Dark mode primary - Glowing indigo */
+    --primary: 230 70% 55%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Dark mode secondary */
+    --secondary: 240 4% 16%;
+    --secondary-foreground: 0 0% 98%;
+    
+    /* Dark surfaces */
+    --card: 240 10% 6%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 6%;
+    --popover-foreground: 0 0% 98%;
+    
+    /* Dark muted tones */
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 5% 65%;
+    
+    /* Dark mode accent */
+    --accent: 230 70% 55%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Dark mode destructive */
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    
+    /* Dark mode borders and inputs */
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 230 70% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
 body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
