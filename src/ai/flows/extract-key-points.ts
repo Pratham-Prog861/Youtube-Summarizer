@@ -32,13 +32,18 @@ const extractKeyPointsPrompt = ai.definePrompt({
   name: 'extractKeyPointsPrompt',
   input: {schema: ExtractKeyPointsInputSchema},
   output: {schema: ExtractKeyPointsOutputSchema},
-  prompt: `You are an expert in extracting key takeaways from video transcripts. Analyze the following transcript and identify the most important points and insights.
+  prompt: `You are an expert in extracting and organizing key insights from video transcripts. Analyze the following transcript and identify the most important points, ensuring they are:
+
+1. Clear and Concise: Each point should be easily understood
+2. Hierarchically Organized: Group related points together
+3. Contextually Rich: Include enough context to make sense independently
+4. Action-Oriented: When applicable, include actionable takeaways
+5. Properly Prioritized: Most important points first
 
 Transcript:
 {{{videoTranscript}}}
 
-Extract the key points from the transcript above.
-`, 
+Extract and format the key points to maximize understanding and retention.`,
 });
 
 const extractKeyPointsFlow = ai.defineFlow(
