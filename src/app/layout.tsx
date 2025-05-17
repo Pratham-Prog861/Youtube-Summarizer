@@ -5,19 +5,18 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import Navbar from '@/components/Navbar';
 
-// const geistSans = GeistSans({ // Removed: GeistSans is used directly
-//   variable: '--font-geist-sans',
-//   subsets: ['latin'],
-// });
-
-// const geistMono = GeistMono({ // Removed: GeistMono is used directly
-//   variable: '--font-geist-mono',
-//   subsets: ['latin'],
-// });
-
 export const metadata: Metadata = {
   title: 'Video Insights Analyzer',
   description: 'Analyze YouTube videos for summaries, key points, and timestamps.',
+  icons: {
+    icon: [
+      {
+        url: '/favicon-32x32.png',
+        sizes: '32x32',
+        type: 'image/png',
+      }
+    ],
+  },
 };
 
 export default function RootLayout({
