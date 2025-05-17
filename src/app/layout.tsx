@@ -6,7 +6,7 @@ import { Toaster } from "@/components/ui/toaster";
 import Navbar from '@/components/Navbar';
 
 export const metadata: Metadata = {
-  title: 'Video Insights Analyzer',
+  title: 'YT Summarizer',
   description: 'Analyze YouTube videos for summaries, key points, and timestamps.',
   icons: {
     icon: [
